@@ -1,0 +1,24 @@
+SUMMARY STATISTICS FOR SENSOR Jfmwhk2e
+========================================
+
+Data Period: 2025-02-07 to 2025-03-15
+Total Readings: 26857
+Missing Data: 48.21%
+
+Power Consumption Metrics:
+  Peak Power: 1386.00 W
+  Average Power: 423.04 W
+  Average Base Load: 260.00 W
+  Peak-to-Average Ratio: 3.28
+
+Top 3 Peak Hours:
+  Hour 12: 5 days
+  Hour 10: 4 days
+  Hour 13: 2 days
+
+Weekday vs Weekend Comparison:
+  Weekday average: 428.13 W
+  Weekend average: 412.79 W
+  Weekend/Weekday ratio: 0.96
+
+Anomaly Summary:

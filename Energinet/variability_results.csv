@@ -1,0 +1,38 @@
+std_dev,mean,coeff_var,unit_id,name,api_endpoint
+258.91085849006254,418.679173862679,0.618399181648767,23903building,Ski Storsenter,/api/unitdata/23903building1
+72.57239584167004,69.4608827586207,1.0447951848504715,,a_Fjernvarme Kjøpesenter,https://www.energinet.net/api/unitdata/97893eb1
+48.688866757434255,56.41255172413794,0.8630857011313166,,b_Fjernvarme Hotell,https://www.energinet.net/api/unitdata/97894eb1
+6.82639518067267,5.923806896551724,1.1523662570173154,,c_Fjernvarme Egon,https://www.energinet.net/api/unitdata/97895eb1
+13.060481715454243,14.209655172413793,0.9191272804993521,,d_Fjernvarme Kino,https://www.energinet.net/api/unitdata/97902eb1
+8.97850783002084,6.186206896551724,1.4513752902486308,,e_Fjernvarme Bibliotek,https://www.energinet.net/api/unitdata/97897eb1
+18.74102876936392,38.206896551724135,0.49051429089490406,,f_Fjernvarme Bolig,https://www.energinet.net/api/unitdata/97898eb1
+106.18316797177972,84.10344827586206,1.2625304924893859,,Ski storsenter - Solceller kvartal 17,https://www.energinet.net/api/unitdata/100122eb1
+53.29163699050001,41.793103448275865,1.2751299279905117,,Solceller 1,https://www.energinet.net/api/unitdata/206199meter1
+107.81413279458322,161.7729655157927,0.6664533375575545,,Ski Storsenter kvartal 13-14,https://www.energinet.net/api/unitdata/44945eb1
+49.102114472392415,34.0551724137931,1.4418401374031795,,32673171 Fellesanlegg Kvartal 13-14,https://www.energinet.net/api/unitdata/77449meter1
+53.64119399512239,47.324137931034485,1.1334848629106304,,D186930 Fellesenergi HM-UM,https://www.energinet.net/api/unitdata/78206meter1
+16.16621253065191,23.819999999999997,0.6786823060727084,,H1.17 Ventilasjon 360.01 Butikker,https://www.energinet.net/api/unitdata/124827meter1
+5.512812705316599,5.888275862068965,0.9362354676398535,,H1.16 Ventilasjon 360.05 Senter,https://www.energinet.net/api/unitdata/124828meter1
+1.8622715087800148,3.16,0.5893264268291186,,H1.23 Ventilasjon 360.07 Rotunde 1 ,https://www.energinet.net/api/unitdata/124830meter1
+46.56451254227454,1.1868965517241405,39.23215757483901,,Fellesanlegg eks. ventilasjon og DX-kjøling,https://www.energinet.net/api/unitdata/124837meter1
+5.786326084835486,4.0344827586206895,1.4342175765831546,,Varme aggregat 36.06. Bibliotek,https://www.energinet.net/api/unitdata/156413meter1
+10.720791139813137,5.56551724137931,1.9262883708462266,,Varme aggregat 36.01-36.05 og .07 Kjøpesenter,https://www.energinet.net/api/unitdata/156414meter1
+31.331908114760132,11.03448275862069,2.839454172900137,,Varme radiatorer kjøpesenter/kino/bibliotek,https://www.energinet.net/api/unitdata/156415meter1
+16.69002564422105,8.344827586206897,2.000044395381861,,Varme aggregat 36.04-36.03 Hotell / restaurant,https://www.energinet.net/api/unitdata/156450meter1
+0.0,0.0,,,Snøsmelt primærvarme,https://www.energinet.net/api/unitdata/156452meter1
+0.0,0.0,,,4262130085 Tidl. kjølemaskin,https://www.energinet.net/api/unitdata/164767meter1
+0.7314293013203425,3.7579310344827577,0.19463616937318715,,90173432 Ventilasjon mezzanin,https://www.energinet.net/api/unitdata/177118meter1
+11.211629769696588,7.8068965517241375,1.4361186542455877,,Varme aggregat 36.02 Kino,https://www.energinet.net/api/unitdata/200800meter1
+23.1255684122063,28.96551724137931,0.7983827189928365,,85228197 Fjernkjøling Kvartal 13-14,https://www.energinet.net/api/unitdata/201597meter1
+45.034007496040026,28.275862068965516,1.5926661187623912,,Varme radiatorer hotell/Egon,https://www.energinet.net/api/unitdata/206596meter1
+8.676519902695937,15.972413793103449,0.5432190785366626,,Varme luftporter KV13-14 (beregnet diff),https://www.energinet.net/api/unitdata/206597meter1
+164.1211346317864,256.9062083468872,0.6388367789468992,,Ski Storsenter Kvartal 17,https://www.energinet.net/api/unitdata/35636eb1
+1.747922586011031,2.6073275884677614,0.6703885594361491,,Ski Storsenter Vann,https://www.energinet.net/api/unitdata/99860eb1
+414.9596473900767,179.89034535144964,2.306736621019738,,Sum leietakere,https://www.energinet.net/api/unitdata/39688eb1
+76.56725501000558,91.72413772796774,0.8347557895511221,,x_Kjøling kv 17,https://www.energinet.net/api/unitdata/71591eb1
+581.5501190237029,1168.746206901814,0.49758460441579744,,z_Hovedmålere,https://www.energinet.net/api/unitdata/39517eb1
+23.1255684122063,28.96551724137931,0.7983827189928365,,z_Kjøling kvartal 13-14,https://www.energinet.net/api/unitdata/83176eb1
+1.3394942875922509,8.075862068965517,0.16586393825864765,,z_Sameiet Ski Amfi,https://www.energinet.net/api/unitdata/42886eb1
+34.98922273345154,20.63448275862069,1.6956675455716823,,z_varme tot. (eks. snøsmelt),https://www.energinet.net/api/unitdata/79711eb1
+14.017427576487384,9.6,1.4601487058841025,,z_varme vent,https://www.energinet.net/api/unitdata/81410eb1
+10.720791139813137,5.56551724137931,1.9262883708462266,,z_varmebatteri 360.01-05,https://www.energinet.net/api/unitdata/94795eb1
