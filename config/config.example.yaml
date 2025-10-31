@@ -1,0 +1,47 @@
+# Configuration template for Peak Load Forecasting Service
+# Copy this file to config.yaml and fill in your actual credentials
+# Never commit config.yaml to version control!
+
+# Stromme API (Datek sensors) credentials
+stromme:
+  api_url: "https://api.stromme.io"
+  idp_url: "https://idp.stromme.io/token"
+  # Basic Auth token (base64 encoded client_id:client_secret)
+  basic_auth_token: "YOUR_STROMME_BASIC_AUTH_TOKEN_HERE"
+
+# Energinet API credentials
+energinet:
+  api_url: "https://www.energinet.net"
+  bearer_token: "YOUR_ENERGINET_BEARER_TOKEN_HERE"
+  accept_language: "no"
+
+# Frost API (temperature data) credentials
+frost:
+  api_url: "https://frost.met.no"
+  client_id: "YOUR_FROST_CLIENT_ID_HERE"
+  client_secret: "YOUR_FROST_CLIENT_SECRET_HERE"
+  station_id: "SN17820"  # Default station (E6 Nøstvet)
+
+# Data collection settings
+data_collection:
+  default_meters:
+    - id: "Jfmwhk2e"
+      name: "Fellesanlegg Main"
+      description: "Common area meter 1"
+    - id: "KGdRbnJc"
+      name: "Fellesanlegg Pole"
+      description: "Common area meter 2 (board by pole)"
+    - id: "6kPJw9QF"
+      name: "Cinema 500"
+      description: "Cinema - 500"
+  
+  chunk_size_days: 7  # For fetching historical data in chunks
+  verify_ssl: false  # Set to true in production
+
+# Paths
+paths:
+  data_raw: "data/raw"
+  data_processed: "data/processed"
+  data_outputs: "data/outputs"
+  notebooks: "notebooks"
+
