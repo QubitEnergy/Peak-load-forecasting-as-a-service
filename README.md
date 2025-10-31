@@ -11,6 +11,7 @@ This service integrates multiple data sources (Datek sensors, Energinet API, and
 - **Multi-source Data Collection**: Integrates Datek/Stromme sensors, Energinet building data, and Frost meteorological data
 - **Peak Load Prediction**: ML-based forecasting with 30-minute advance warning
 - **Time Interval Analysis**: Automatic detection of consumption patterns and peak periods
+- **AMS Anomaly Detection**: Detects null values, negative values, and missing hours in hourly meter data
 - **Modular Architecture**: Clean separation of data collection, processing, and modeling layers
 
 ## Project Structure
@@ -23,7 +24,8 @@ peak-load-forecasting-as-a-service/
 │   │   └── energinet_client.py
 │   ├── data_processors/       # Data cleaning and preprocessing
 │   │   ├── preprocessor.py
-│   │   └── temperature_merger.py
+│   │   ├── temperature_merger.py
+│   │   └── anomaly_detector.py
 │   ├── models/                # ML models
 │   │   └── peak_predictor.py
 │   └── utils/                 # Utilities and configuration
@@ -164,7 +166,52 @@ merged_df = merger.merge_energy_temperature(
 merged_df.to_csv("data/processed/energy_and_temperature.csv", index=False)
 ```
 
-### 4. Train Prediction Model
+### 4. Run Anomaly Detection (AMS Data Quality Check)
+
+**Action point from IFE meeting**: "Lage skript for anomaly detection (sjekke null- og minustimer i AMS-data)"
+
+```python
+from src.data_processors import AMSAnomalyDetector
+import pandas as pd
+
+# Load hourly AMS data (or aggregate minute data to hourly)
+df = pd.read_csv("data/processed/energy_and_temperature.csv", sep=";")
+df['timestamp_utc'] = pd.to_datetime(df['timestamp_utc'], utc=True)
+
+# If data is minute-level, aggregate to hourly first
+df['timestamp_hour'] = df['timestamp_utc'].dt.floor('H')
+df_hourly = df.groupby(['timestamp_hour', 'meter_id']).agg({
+    'active_power_W': 'mean',
+    'air_temperature': 'mean'
+}).reset_index()
+df_hourly.rename(columns={'timestamp_hour': 'timestamp_utc'}, inplace=True)
+
+# Initialize detector
+detector = AMSAnomalyDetector(
+    timestamp_col="timestamp_utc",
+    power_col="active_power_W",
+    meter_id_col="meter_id"
+)
+
+# Generate comprehensive report
+detector.print_report(df_hourly, output_file="data/outputs/anomaly_report.txt")
+
+# Generate visualization plots
+detector.plot_anomalies(df_hourly, output_dir="data/outputs/anomaly_plots")
+
+# Get summary statistics
+summary = detector.get_summary(df_hourly)
+print(f"Null values: {summary['null_values']} ({summary['null_percentage']:.2f}%)")
+print(f"Negative values: {summary['negative_values']} ({summary['negative_percentage']:.2f}%)")
+print(f"Missing hours: {summary['missing_hours']} ({summary['missing_hours_percentage']:.2f}%)")
+```
+
+**Or use the example script**:
+```bash
+python examples/anomaly_detection_example.py
+```
+
+### 5. Train Prediction Model
 
 ```python
 from src.models import PowerPeakPredictor
@@ -179,7 +226,7 @@ predictor = PowerPeakPredictor()
 predictor.fit(df, meter_id='KGdRbnJc')
 ```
 
-### 5. Make Predictions
+### 6. Make Predictions
 
 ```python
 # Get current and historical data
